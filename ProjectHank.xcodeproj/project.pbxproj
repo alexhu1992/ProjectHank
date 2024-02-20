@@ -16,6 +16,11 @@
 		358170142B8329EC00E68A40 /* ProjectHankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358170132B8329EC00E68A40 /* ProjectHankTests.swift */; };
 		3581701E2B8329EC00E68A40 /* ProjectHankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3581701D2B8329EC00E68A40 /* ProjectHankUITests.swift */; };
 		358170202B8329EC00E68A40 /* ProjectHankUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3581701F2B8329EC00E68A40 /* ProjectHankUITestsLaunchTests.swift */; };
+		358170312B83E1F500E68A40 /* MainPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358170302B83E1F500E68A40 /* MainPetView.swift */; };
+		358170332B8416C600E68A40 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358170322B8416C600E68A40 /* Pet.swift */; };
+		358170352B84189300E68A40 /* Breed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358170342B84189300E68A40 /* Breed.swift */; };
+		358170372B84225300E68A40 /* PetCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358170362B84225300E68A40 /* PetCardView.swift */; };
+		358170392B842F7700E68A40 /* PetDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358170382B842F7700E68A40 /* PetDetailedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		358170192B8329EC00E68A40 /* ProjectHankUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectHankUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3581701D2B8329EC00E68A40 /* ProjectHankUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHankUITests.swift; sourceTree = "<group>"; };
 		3581701F2B8329EC00E68A40 /* ProjectHankUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHankUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		358170302B83E1F500E68A40 /* MainPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPetView.swift; sourceTree = "<group>"; };
+		358170322B8416C600E68A40 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
+		358170342B84189300E68A40 /* Breed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breed.swift; sourceTree = "<group>"; };
+		358170362B84225300E68A40 /* PetCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCardView.swift; sourceTree = "<group>"; };
+		358170382B842F7700E68A40 /* PetDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +109,12 @@
 		35816FFB2B8329EA00E68A40 /* ProjectHank */ = {
 			isa = PBXGroup;
 			children = (
-				35816FFC2B8329EA00E68A40 /* ProjectHankApp.swift */,
-				35816FFE2B8329EA00E68A40 /* Persistence.swift */,
-				358170032B8329EA00E68A40 /* ContentView.swift */,
-				358170052B8329EC00E68A40 /* Assets.xcassets */,
 				358170072B8329EC00E68A40 /* ProjectHank.entitlements */,
-				358170002B8329EA00E68A40 /* ProjectHank.xcdatamodeld */,
+				3581702F2B8344AC00E68A40 /* Others */,
+				3581702E2B8344A000E68A40 /* Models */,
+				3581702D2B83449700E68A40 /* ViewModels */,
+				3581702C2B83448D00E68A40 /* Views */,
+				35816FFC2B8329EA00E68A40 /* ProjectHankApp.swift */,
 				358170082B8329EC00E68A40 /* Preview Content */,
 			);
 			path = ProjectHank;
@@ -133,6 +143,51 @@
 				3581701F2B8329EC00E68A40 /* ProjectHankUITestsLaunchTests.swift */,
 			);
 			path = ProjectHankUITests;
+			sourceTree = "<group>";
+		};
+		3581702C2B83448D00E68A40 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3581703A2B842F8200E68A40 /* Components */,
+				358170032B8329EA00E68A40 /* ContentView.swift */,
+				358170302B83E1F500E68A40 /* MainPetView.swift */,
+				358170382B842F7700E68A40 /* PetDetailedView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3581702D2B83449700E68A40 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		3581702E2B8344A000E68A40 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				358170322B8416C600E68A40 /* Pet.swift */,
+				358170342B84189300E68A40 /* Breed.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3581702F2B8344AC00E68A40 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				358170052B8329EC00E68A40 /* Assets.xcassets */,
+				358170002B8329EA00E68A40 /* ProjectHank.xcdatamodeld */,
+				35816FFE2B8329EA00E68A40 /* Persistence.swift */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		3581703A2B842F8200E68A40 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				358170362B84225300E68A40 /* PetCardView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,8 +320,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				358170312B83E1F500E68A40 /* MainPetView.swift in Sources */,
+				358170352B84189300E68A40 /* Breed.swift in Sources */,
+				358170372B84225300E68A40 /* PetCardView.swift in Sources */,
+				358170392B842F7700E68A40 /* PetDetailedView.swift in Sources */,
 				35816FFD2B8329EA00E68A40 /* ProjectHankApp.swift in Sources */,
 				358170022B8329EA00E68A40 /* ProjectHank.xcdatamodeld in Sources */,
+				358170332B8416C600E68A40 /* Pet.swift in Sources */,
 				358170042B8329EA00E68A40 /* ContentView.swift in Sources */,
 				35816FFF2B8329EA00E68A40 /* Persistence.swift in Sources */,
 			);
@@ -425,6 +485,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ProjectHank/ProjectHank.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ProjectHank/Preview Content\"";
@@ -463,6 +524,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ProjectHank/ProjectHank.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ProjectHank/Preview Content\"";

@@ -13,8 +13,18 @@ struct ProjectHankApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            TabView {
+                ContentView()
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                    .tabItem {
+                        Label("Home", systemImage: "house")
+                    }
+                MainPetView(pets: Pet.sampleData)
+                    .tabItem {
+                        Label("Paws", systemImage: "pawprint")
+                    }
+            }
+            
         }
     }
 }
