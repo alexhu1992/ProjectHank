@@ -11,13 +11,13 @@ import Foundation
  Simple struct represents a pet, contains basic information of a pet
  */
 struct Pet: Identifiable, Codable, Observable {
-    var id: UUID
+    let id: UUID
     
-    var name: String
-    var birthday: String
-    var breed: Breed
+    let name: String
+    let birthday: Date
+    let breed: Breed
     
-    init(id: UUID = UUID(), name: String, birthday: String, breed: Breed) {
+    init(id: UUID = UUID(), name: String, birthday: Date, breed: Breed) {
         self.id = id
         self.name = name
         self.birthday = birthday
@@ -27,8 +27,8 @@ struct Pet: Identifiable, Codable, Observable {
 
 extension Pet {
     static let sampleData: [Pet] = [
-        Pet(name: "Hank", birthday: Date.now.formatted(), breed: .shiba_inu),
-        Pet(name: "Avocado", birthday: Date.now.formatted(), breed: .golden_retriever),
-        Pet(name: "Leo", birthday: Date.now.formatted(), breed: .german_sheperd)
+        Pet(name: "Hank", birthday: Date.now, breed: .shiba_inu),
+        Pet(name: "Avocado", birthday: Date.now, breed: .golden_retriever),
+        Pet(name: "Leo", birthday: Date.now, breed: .german_sheperd)
     ]
 }

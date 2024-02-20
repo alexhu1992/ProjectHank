@@ -14,15 +14,16 @@ struct ProjectHankApp: App {
     var body: some Scene {
         WindowGroup {
             TabView {
-                ContentView()
-                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                    .tabItem {
-                        Label("Home", systemImage: "house")
-                    }
-                MainPetView(pets: Pet.sampleData)
+                PetListView(pets: Pet.sampleData)
                     .tabItem {
                         Label("Paws", systemImage: "pawprint")
                     }
+                PrescriptionView()
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                    .tabItem {
+                        Label("Rx", systemImage: "archivebox")
+                    }
+
             }
             
         }

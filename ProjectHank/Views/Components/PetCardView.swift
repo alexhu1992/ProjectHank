@@ -8,6 +8,13 @@
 import SwiftUI
 
 struct PetCardView: View {
+    private let itemFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .none
+        return formatter
+    }()
+    
     let pet: Pet
     
     var body: some View {
@@ -16,12 +23,11 @@ struct PetCardView: View {
                 .font(.headline)
                 .accessibilityAddTraits(.isHeader)
                 .bold()
-                .navigationTitle(pet.name)
             Spacer()
             HStack {
                 Label("\(pet.breed.rawValue)", systemImage: "dog")
                 Spacer()
-                Label("\(pet.birthday)", systemImage: "clock")
+                Label("\(pet.birthday, formatter: itemFormatter)", systemImage: "clock")
                     .padding(.trailing, 20)
                     .labelStyle(.automatic)
             }
