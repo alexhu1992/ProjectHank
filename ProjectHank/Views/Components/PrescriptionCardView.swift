@@ -9,8 +9,19 @@ import SwiftUI
 
 struct PrescriptionCardView: View {
     let prescription: Prescription
+    
     var body: some View {
-        Text(prescription.name)
+        HStack(alignment: .top) {
+            Text("\(prescription.name)")
+                .bold()
+                .font(.subheadline)
+                .fontDesign(.rounded)
+            Spacer()
+            Label("\(prescription.schedule)", systemImage: "pill.circle")
+                .accessibilityAddTraits(.isHeader)
+                .foregroundColor(.yellow)
+        }
+        .padding()
     }
 }
 

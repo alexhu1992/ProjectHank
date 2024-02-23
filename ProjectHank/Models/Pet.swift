@@ -16,19 +16,23 @@ struct Pet: Identifiable, Codable, Observable {
     let name: String
     let birthday: Date
     let breed: Breed
+    let prescriptions: [Prescription]?
+    let vacaccines: [Vaccacine]?
     
-    init(id: UUID = UUID(), name: String, birthday: Date, breed: Breed) {
+    init(id: UUID = UUID(), name: String, birthday: Date, breed: Breed, prescriptions: [Prescription]? = [], vacaccines: [Vaccacine]? = []) {
         self.id = id
         self.name = name
         self.birthday = birthday
         self.breed = breed
+        self.prescriptions = prescriptions
+        self.vacaccines = vacaccines
     }
 }
 
 extension Pet {
     static let sampleData: [Pet] = [
-        Pet(name: "Hank", birthday: Date.now, breed: .shiba_inu),
-        Pet(name: "Avocado", birthday: Date.now, breed: .golden_retriever),
-        Pet(name: "Leo", birthday: Date.now, breed: .german_sheperd)
+        Pet(name: "Hank", birthday: Date.now, breed: .shiba_inu, prescriptions: Prescription.sampleData, vacaccines: Vaccacine.sampleData),
+        Pet(name: "Avocado", birthday: Date.now, breed: .golden_retriever, prescriptions: Prescription.sampleData, vacaccines: Vaccacine.sampleData),
+        Pet(name: "Leo", birthday: Date.now, breed: .german_sheperd, prescriptions: Prescription.sampleData, vacaccines: Vaccacine.sampleData)
     ]
 }

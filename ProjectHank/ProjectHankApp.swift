@@ -18,12 +18,14 @@ struct ProjectHankApp: App {
                     .tabItem {
                         Label("Paws", systemImage: "pawprint")
                     }
-                PrescriptionView()
-                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                HealthListView(prescriptions: Prescription.sampleData, vaccacines: Vaccacine.sampleData)
                     .tabItem {
-                        Label("Rx", systemImage: "archivebox")
+                        Label("Health", systemImage: "syringe")
                     }
-
+                DogParkListView()
+                    .tabItem {
+                        Label("Parks", systemImage: "map")
+                    }
             }
             
         }
