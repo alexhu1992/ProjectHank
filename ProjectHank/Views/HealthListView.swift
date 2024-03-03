@@ -43,7 +43,9 @@ struct HealthListView: View {
             }
             .toolbar {
                 ToolbarItem {
-                    Button(action: {}, label: {
+                    Button(action: {
+                        print("Add!")
+                    }, label: {
                         Image(systemName: "plus")
                     })
                     .accessibilityLabel("New pet")
@@ -56,6 +58,10 @@ struct HealthListView: View {
             .navigationTitle("Health")
         }
     }
+    
+//    func onAddNewItem() -> any View {
+//        return ViewBuilder()
+//    }
 }
 
 #Preview {

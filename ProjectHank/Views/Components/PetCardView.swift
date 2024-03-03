@@ -27,7 +27,7 @@ struct PetCardView: View {
             HStack {
                 Label("\(pet.breed.rawValue)", systemImage: "dog")
                 Spacer()
-                Label("\(pet.birthday, formatter: itemFormatter)", systemImage: "clock")
+                Label("\(pet.birthday, formatter: itemFormatter)",systemImage:"birthday.cake")
                     .padding(.trailing, 20)
                     .labelStyle(.automatic)
             }

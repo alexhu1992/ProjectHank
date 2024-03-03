@@ -7,9 +7,15 @@
 
 import SwiftUI
 
+extension AnyTransition {
+    static var moveAndFade: AnyTransition {
+        AnyTransition.move(edge: .trailing)
+    }
+}
+
 struct PrescriptionCardView: View {
     let prescription: Prescription
-    @State private var reminderOn = true
+    @State private var showDetails = false
     
     var body: some View {
         HStack(alignment: .center) {
@@ -18,12 +24,26 @@ struct PrescriptionCardView: View {
                     .bold()
                     .font(.subheadline)
                     .fontDesign(.rounded)
-                Label("\(prescription.schedule)", systemImage: "pill.circle")
-                    .accessibilityAddTraits(.isHeader)
-                    .foregroundColor(.yellow)
             }
             Spacer()
-            Toggle("", isOn: $reminderOn)
+            Button {
+                withAnimation {
+                    showDetails.toggle()
+                }
+            } label: {
+                Label("Graph", systemImage: "chevron.right.circle")
+                    .labelStyle(.iconOnly)
+                    .imageScale(.large)
+                    .rotationEffect(.degrees(showDetails ? 90 : 0))
+                    .padding()
+                    .animation(.easeInOut, value: showDetails)
+                
+            }
+        }
+        
+        if showDetails {
+            PrescriptionDetailView(prescription: prescription)
+                .transition(.moveAndFade)
         }
     }
     
