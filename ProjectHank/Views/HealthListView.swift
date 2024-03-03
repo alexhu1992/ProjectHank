@@ -12,32 +12,47 @@ struct HealthListView: View {
     let vaccacines: [Vaccacine]?
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Prescriptions")
-                .font(.title2)
-                .bold()
-                .foregroundStyle(.foreground)
-                .fontDesign(.rounded)
-                .padding()
-            
-            ForEach(prescriptions!) { prescription in
-                PrescriptionCardView(prescription: prescription)
+        NavigationStack {
+            List {
+                let prescription = 
+                    Text("Prescriptions")
+                    .font(.subheadline)
+                    .padding(/*@START_MENU_TOKEN@*/EdgeInsets()/*@END_MENU_TOKEN@*/)
+                
+                Section(header: prescription) {
+                    ForEach(prescriptions!) { prescription in
+                        PrescriptionCardView(prescription: prescription)
+                            .swipeActions(edge: .trailing) {
+                                Button(role: .destructive) {
+                                } label: {
+                                    Label("Delete", systemImage: "trash")
+                                }
+                        }
+                    }
+                }
+                
+                let vaccacine = Text("Vaccacines")
+                    .font(.subheadline)
+                    .padding(EdgeInsets())
+                Section(header: vaccacine) {
+                    ForEach(vaccacines!) { vaccacine in
+                        VaccacineCardView(vaccacine: vaccacine)
+                    }
+                }
             }
-            
-            Divider()
-            
-            Text("Vaccacines")
-                .font(.title2)
-                .foregroundStyle(.foreground)
-                .fontDesign(.rounded)
-                .padding()
-                .bold()
-            
-            ForEach(vaccacines!) { vaccacine in
-                VaccacineCardView(vaccacine: vaccacine)
+            .toolbar {
+                ToolbarItem {
+                    Button(action: {}, label: {
+                        Image(systemName: "plus")
+                    })
+                    .accessibilityLabel("New pet")
+                }
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    EditButton()
+                }
             }
-            
-            Spacer()
+            .navigationTitle("Health")
         }
     }
 }

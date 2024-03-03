@@ -22,7 +22,6 @@ struct VaccacineCardView: View {
                 DatePicker(selection: .constant(vaccacine.dueDate), displayedComponents: .date, label: { Label("Due on:", systemImage: "calendar.badge.clock") })
             }
         }
-        .padding()
     }
 }
 

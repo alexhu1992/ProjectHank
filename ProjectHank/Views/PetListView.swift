@@ -13,7 +13,8 @@ struct PetListView: View {
     var body: some View {
         NavigationStack {
             List(pets) { pet in
-                NavigationLink(destination: Text(pet.name)) {
+                NavigationLink(destination: 
+                                HealthListView(prescriptions: pet.prescriptions, vaccacines: pet.vacaccines)) {
                     PetCardView(pet: pet)
                 }
             }

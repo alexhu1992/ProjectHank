@@ -21,7 +21,6 @@ struct PrescriptionCardView: View {
                 .accessibilityAddTraits(.isHeader)
                 .foregroundColor(.yellow)
         }
-        .padding()
     }
 }
 
