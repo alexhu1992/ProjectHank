@@ -34,6 +34,7 @@ struct HealthListView: View {
                 let vaccacine = Text("Vaccacines")
                     .font(.subheadline)
                     .padding(EdgeInsets())
+
                 Section(header: vaccacine) {
                     ForEach(vaccacines!) { vaccacine in
                         VaccacineCardView(vaccacine: vaccacine)

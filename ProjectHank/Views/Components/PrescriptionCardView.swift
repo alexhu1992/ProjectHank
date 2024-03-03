@@ -9,18 +9,27 @@ import SwiftUI
 
 struct PrescriptionCardView: View {
     let prescription: Prescription
+    @State private var reminderOn = true
     
     var body: some View {
-        HStack(alignment: .top) {
-            Text("\(prescription.name)")
-                .bold()
-                .font(.subheadline)
-                .fontDesign(.rounded)
+        HStack(alignment: .center) {
+            VStack(alignment: .leading) {
+                Text("\(prescription.name)")
+                    .bold()
+                    .font(.subheadline)
+                    .fontDesign(.rounded)
+                Label("\(prescription.schedule)", systemImage: "pill.circle")
+                    .accessibilityAddTraits(.isHeader)
+                    .foregroundColor(.yellow)
+            }
             Spacer()
-            Label("\(prescription.schedule)", systemImage: "pill.circle")
-                .accessibilityAddTraits(.isHeader)
-                .foregroundColor(.yellow)
+            Toggle("", isOn: $reminderOn)
         }
+    }
+    
+    private func isToggleOn() -> Bool {
+        print("Toggled!!")
+        return true
     }
 }
 
