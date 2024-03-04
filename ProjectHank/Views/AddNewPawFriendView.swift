@@ -12,7 +12,6 @@ struct AddNewPawFriendView: View {
     @StateObject var viewModel = NewPetViewModel()
     @Binding var newItemPresented: Bool
     
-    
     var body: some View {
         VStack {
             Text("Add PawFriend")
@@ -25,8 +24,16 @@ struct AddNewPawFriendView: View {
                     .textFieldStyle(DefaultTextFieldStyle())
                 
                 // Due date
-                DatePicker("Birthday", selection: $viewModel.birthday)
-                    .datePickerStyle(GraphicalDatePickerStyle())
+                DatePicker("Birthday", selection: $viewModel.birthday, displayedComponents: [.date])
+                    .datePickerStyle(.compact)
+                
+                Picker("Breed", selection: $viewModel.breed) {
+                    ForEach(Breed.allCases) { value in
+                        Text(String(describing: value.description))
+                            .tag(value.id)
+                    }
+                }
+                .pickerStyle(.automatic)
                 
                 // Button
                 Button(action: {
@@ -39,7 +46,13 @@ struct AddNewPawFriendView: View {
                         print("not valid!!!")
                     }
                 }, label: {
-                    Image(systemName: "plus")
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 10)
+                            .foregroundColor(.red)
+                        Text("Save")
+                            .foregroundStyle(.white)
+                            .bold()
+                    }
                 })
                 .accessibilityLabel("New pet")
             }

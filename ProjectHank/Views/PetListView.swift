@@ -10,13 +10,11 @@ import SwiftData
 
 struct PetListView: View {
     @Environment(\.modelContext) private var modelContext
-    @StateObject var viewModel : NewPetViewModel = NewPetViewModel()
+    @StateObject var viewModel : NewPetViewModel
+    @Query var pets: [Pet]
 
-    var pets: [Pet] {
-        didSet {
-            let pets: () = try! pets = modelContext.fetch(fetchDescriptor)
-            return pets
-        }
+    init() {
+        self._viewModel = StateObject(wrappedValue: NewPetViewModel())
     }
     
     private let fetchDescriptor = FetchDescriptor<Pet>()
@@ -27,12 +25,13 @@ struct PetListView: View {
                 NavigationLink(destination: 
                                 HealthListView(prescriptions: pet.prescriptions, vaccacines: pet.vacaccines, name: pet.name)) {
                     PetCardView(pet: pet)
-                        .swipeActions(edge: .trailing) {
-                            Button(role: .destructive) {
-                            } label: {
-                                Label("Delete", systemImage: "trash")
-                            }
+                    .swipeActions(edge: .trailing) {
+                        Button(role: .destructive) {
+                            deletePawFriend(pet: pet)
+                        } label: {
+                            Label("Delete", systemImage: "trash")
                         }
+                    }
                 }
             }
             .toolbar {
@@ -61,6 +60,11 @@ struct PetListView: View {
      */
     private func addNewPawFriend() {
         viewModel.showNewViewModel = true
+    }
+    
+    private func deletePawFriend(pet: Pet) {
+        modelContext.delete(pet)
+        print("Deleted \(pet.name)")
     }
 }
 

@@ -25,7 +25,7 @@ struct ProjectHankApp: App {
     var body: some Scene {
         WindowGroup {
             TabView {
-                PetListView(pets: Pet.sampleData)
+                PetListView()
                     .tabItem {
                         Label("Paws", systemImage: "pawprint")
                     }

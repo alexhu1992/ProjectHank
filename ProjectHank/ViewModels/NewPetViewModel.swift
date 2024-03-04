@@ -30,7 +30,7 @@ class NewPetViewModel: ObservableObject {
             return false
         }
         
-        guard birthday >= Date().addingTimeInterval(-86400) else {
+        guard birthday >= Date().addingTimeInterval(-11111186400) else {
             return false
         }
         

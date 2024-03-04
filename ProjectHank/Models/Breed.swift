@@ -7,8 +7,22 @@
 
 import Foundation
 
-enum Breed: String, Codable {
+enum Breed: String, Codable, CaseIterable, Identifiable {
+    var id: Self { self }
+    
     case shiba_inu = "Shiba Inu"
     case german_sheperd = "Sherman Sheperd"
     case golden_retriever = "Golden Retriver"
+    
+    var description: String {
+
+    switch self {
+        case .shiba_inu:
+            return "Shiba Inu"
+        case .german_sheperd:
+            return "Sherman Sheperd"
+        case .golden_retriever:
+            return "Golden Retriver"
+        }
+    }
 }
