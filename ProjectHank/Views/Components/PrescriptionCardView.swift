@@ -24,6 +24,10 @@ struct PrescriptionCardView: View {
                     .bold()
                     .font(.subheadline)
                     .fontDesign(.rounded)
+                Label("Expires On: \(prescription.expirationDate, formatter: itemFormatter)", systemImage: "calendar.badge.clock")
+                    .font(.footnote)
+                    .foregroundColor(.gray)
+                    .bold()
             }
             Spacer()
             Button {
@@ -35,7 +39,7 @@ struct PrescriptionCardView: View {
                     .labelStyle(.iconOnly)
                     .imageScale(.large)
                     .rotationEffect(.degrees(showDetails ? 90 : 0))
-                    .padding()
+//                    .padding()
                     .animation(.easeInOut, value: showDetails)
                 
             }

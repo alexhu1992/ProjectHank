@@ -6,16 +6,20 @@
 //
 
 import Foundation
+import CoreData
+import SwiftData
 
 /**
  Simple struct represents a pet, contains basic information of a pet
  */
-struct Pet: Identifiable, Codable, Observable {
+@Model
+final class Pet{
     let id: UUID
     
     let name: String
     let birthday: Date
     let breed: Breed
+    
     let prescriptions: [Prescription]?
     let vacaccines: [Vaccacine]?
     

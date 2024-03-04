@@ -10,6 +10,7 @@ import SwiftUI
 struct HealthListView: View {
     let prescriptions: [Prescription]?
     let vaccacines: [Vaccacine]?
+    let name: String
     
     var body: some View {
         NavigationStack {
@@ -55,7 +56,7 @@ struct HealthListView: View {
                     EditButton()
                 }
             }
-            .navigationTitle("Health")
+            .navigationTitle(name)
         }
     }
     
@@ -67,6 +68,7 @@ struct HealthListView: View {
 #Preview {
     HealthListView(
         prescriptions: Prescription.sampleData,
-        vaccacines: Vaccacine.sampleData
+        vaccacines: Vaccacine.sampleData,
+        name: "placement"
     )
 }

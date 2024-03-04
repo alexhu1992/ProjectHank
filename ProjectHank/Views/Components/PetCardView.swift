@@ -23,7 +23,7 @@ struct PetCardView: View {
                 .font(.headline)
                 .accessibilityAddTraits(.isHeader)
                 .bold()
-//            Spacer()
+
             HStack {
                 Label("\(pet.breed.rawValue)", systemImage: "dog")
                 Spacer()

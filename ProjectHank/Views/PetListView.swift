@@ -6,21 +6,40 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct PetListView: View {
-    let pets: [Pet]
+    @Environment(\.modelContext) private var modelContext
+    @StateObject var viewModel : NewPetViewModel = NewPetViewModel()
+
+    var pets: [Pet] {
+        didSet {
+            let pets: () = try! pets = modelContext.fetch(fetchDescriptor)
+            return pets
+        }
+    }
+    
+    private let fetchDescriptor = FetchDescriptor<Pet>()
 
     var body: some View {
         NavigationStack {
             List(pets) { pet in
                 NavigationLink(destination: 
-                                HealthListView(prescriptions: pet.prescriptions, vaccacines: pet.vacaccines)) {
+                                HealthListView(prescriptions: pet.prescriptions, vaccacines: pet.vacaccines, name: pet.name)) {
                     PetCardView(pet: pet)
+                        .swipeActions(edge: .trailing) {
+                            Button(role: .destructive) {
+                            } label: {
+                                Label("Delete", systemImage: "trash")
+                            }
+                        }
                 }
             }
             .toolbar {
                 ToolbarItem {
-                    Button(action: {}, label: {
+                    Button(action: {
+                        addNewPawFriend()
+                    }, label: {
                         Image(systemName: "plus")
                     })
                     .accessibilityLabel("New pet")
@@ -31,10 +50,20 @@ struct PetListView: View {
                 }
             }
             .navigationTitle(Text("Pawfriend"))
+            .sheet(isPresented: $viewModel.showNewViewModel) {
+                AddNewPawFriendView(newItemPresented: $viewModel.showNewViewModel)
+            }
         }
+    }
+    
+    /**
+        Add a new paw friend
+     */
+    private func addNewPawFriend() {
+        viewModel.showNewViewModel = true
     }
 }
 
 #Preview {
-    PetListView(pets: Pet.sampleData)
+    PetListView()
 }

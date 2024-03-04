@@ -29,6 +29,12 @@
 		3581704C2B88843000E68A40 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3581704B2B88843000E68A40 /* Utility.swift */; };
 		3581704E2B9421CC00E68A40 /* NewHealthItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3581704D2B9421CC00E68A40 /* NewHealthItemView.swift */; };
 		358170512B94457A00E68A40 /* PrescriptionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358170502B94457A00E68A40 /* PrescriptionDetailView.swift */; };
+		358170532B94517A00E68A40 /* GifImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358170522B94517A00E68A40 /* GifImageView.swift */; };
+		358170552B9452B200E68A40 /* shiba.gif in Resources */ = {isa = PBXBuildFile; fileRef = 358170542B9452B200E68A40 /* shiba.gif */; };
+		358170572B94544A00E68A40 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358170562B94544A00E68A40 /* AboutView.swift */; };
+		358170592B95879500E68A40 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358170582B95879500E68A40 /* ReminderView.swift */; };
+		3581705B2B95953600E68A40 /* AddNewPawFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3581705A2B95953600E68A40 /* AddNewPawFriendView.swift */; };
+		3581705D2B95960300E68A40 /* NewPetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3581705C2B95960300E68A40 /* NewPetViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +81,12 @@
 		3581704B2B88843000E68A40 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		3581704D2B9421CC00E68A40 /* NewHealthItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHealthItemView.swift; sourceTree = "<group>"; };
 		358170502B94457A00E68A40 /* PrescriptionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrescriptionDetailView.swift; sourceTree = "<group>"; };
+		358170522B94517A00E68A40 /* GifImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImageView.swift; sourceTree = "<group>"; };
+		358170542B9452B200E68A40 /* shiba.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = shiba.gif; sourceTree = "<group>"; };
+		358170562B94544A00E68A40 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		358170582B95879500E68A40 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
+		3581705A2B95953600E68A40 /* AddNewPawFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPawFriendView.swift; sourceTree = "<group>"; };
+		3581705C2B95960300E68A40 /* NewPetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPetViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +181,9 @@
 				358170302B83E1F500E68A40 /* PetListView.swift */,
 				3581703B2B8473D100E68A40 /* HealthListView.swift */,
 				358170422B84843100E68A40 /* DogParkListView.swift */,
+				358170522B94517A00E68A40 /* GifImageView.swift */,
+				358170562B94544A00E68A40 /* AboutView.swift */,
+				3581705A2B95953600E68A40 /* AddNewPawFriendView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -176,6 +191,7 @@
 		3581702D2B83449700E68A40 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				3581705C2B95960300E68A40 /* NewPetViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -194,6 +210,7 @@
 		3581702F2B8344AC00E68A40 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				358170542B9452B200E68A40 /* shiba.gif */,
 				358170052B8329EC00E68A40 /* Assets.xcassets */,
 				358170002B8329EA00E68A40 /* ProjectHank.xcdatamodeld */,
 				35816FFE2B8329EA00E68A40 /* Persistence.swift */,
@@ -218,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				358170502B94457A00E68A40 /* PrescriptionDetailView.swift */,
+				358170582B95879500E68A40 /* ReminderView.swift */,
 			);
 			path = DetailView;
 			sourceTree = "<group>";
@@ -327,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3581700A2B8329EC00E68A40 /* Preview Assets.xcassets in Resources */,
+				358170552B9452B200E68A40 /* shiba.gif in Resources */,
 				358170062B8329EC00E68A40 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,7 +375,11 @@
 				358170312B83E1F500E68A40 /* PetListView.swift in Sources */,
 				358170352B84189300E68A40 /* Breed.swift in Sources */,
 				358170372B84225300E68A40 /* PetCardView.swift in Sources */,
+				3581705B2B95953600E68A40 /* AddNewPawFriendView.swift in Sources */,
+				358170532B94517A00E68A40 /* GifImageView.swift in Sources */,
 				358170482B887E3100E68A40 /* Vaccacine.swift in Sources */,
+				3581705D2B95960300E68A40 /* NewPetViewModel.swift in Sources */,
+				358170592B95879500E68A40 /* ReminderView.swift in Sources */,
 				3581704C2B88843000E68A40 /* Utility.swift in Sources */,
 				358170512B94457A00E68A40 /* PrescriptionDetailView.swift in Sources */,
 				358170412B84792C00E68A40 /* PrescriptionCardView.swift in Sources */,
@@ -367,6 +390,7 @@
 				3581704E2B9421CC00E68A40 /* NewHealthItemView.swift in Sources */,
 				358170332B8416C600E68A40 /* Pet.swift in Sources */,
 				35816FFF2B8329EA00E68A40 /* Persistence.swift in Sources */,
+				358170572B94544A00E68A40 /* AboutView.swift in Sources */,
 				3581704A2B88825B00E68A40 /* VaccacineCardView.swift in Sources */,
 				358170432B84843100E68A40 /* DogParkListView.swift in Sources */,
 			);

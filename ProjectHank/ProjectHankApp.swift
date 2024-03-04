@@ -6,10 +6,21 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct ProjectHankApp: App {
-    let persistenceController = PersistenceController.shared
+    var container: ModelContainer
+    
+    init() {
+        do {
+            let storeURL = URL.documentsDirectory.appending(path: "pawfriend.store")
+            let config = ModelConfiguration(url: storeURL)
+            container = try ModelContainer(for: Pet.self, configurations: config)
+        } catch {
+            fatalError("Failed to configure SwiftData container.")
+        }
+    }
 
     var body: some Scene {
         WindowGroup {
@@ -18,16 +29,15 @@ struct ProjectHankApp: App {
                     .tabItem {
                         Label("Paws", systemImage: "pawprint")
                     }
-                HealthListView(prescriptions: Prescription.sampleData, vaccacines: Vaccacine.sampleData)
+                HealthListView(prescriptions: Prescription.sampleData, vaccacines: Vaccacine.sampleData, name: "hello")
                     .tabItem {
                         Label("Health", systemImage: "syringe")
                     }
-                DogParkListView()
+                AboutView()
                     .tabItem {
-                        Label("Parks", systemImage: "map")
+                        Label("About", systemImage: "dog.circle.fill")
                     }
             }
-            
-        }
+        }.modelContainer(container)
     }
 }

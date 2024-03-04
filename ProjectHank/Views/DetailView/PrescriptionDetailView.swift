@@ -13,12 +13,13 @@ struct PrescriptionDetailView: View {
     
     var body: some View {
         HStack {
-            VStack(alignment: .leading) {
-                Label("Schedule: \(prescription.schedule)", systemImage: "clock")
-                    .font(.subheadline)
-                Label("Expires On: \(prescription.expirationDate, formatter: itemFormatter)", systemImage: "calendar.badge.clock")
+            VStack(alignment: .center) {
+                Label("\(prescription.schedule)", systemImage: "clock")
                     .font(.subheadline)
             }
+            .onTapGesture(perform: {
+                print("hello")
+            })
             Spacer()
             Toggle("", isOn: $isReminderOn)
         }
